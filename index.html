@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Resume</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@webtui/css/dist/base.css"
+    />
+    <style>
+      @import url("https://cdn.jsdelivr.net/npm/@webtui/css/components/typography.css");
+      @import url("https://cdn.jsdelivr.net/npm/@webtui/css/components/button.css");
+      @import url("https://cdn.jsdelivr.net/npm/@webtui/css/utils/box.css");
+
+      body {
+        padding: 2rem;
+        font-family: sans-serif;
+      }
+
+      .resume-section {
+        margin-bottom: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div box-="round contain:none">
+      <h1>John Doe</h1>
+      <p>Email: john@example.com | Website: johndoe.dev</p>
+    </div>
+
+    <div class="resume-section" box-="square">
+      <h2>Experience</h2>
+      <ul marker-="bullet">
+        <li>Software Engineer at Acme Corp (2020–Present)</li>
+        <li>Frontend Developer at Beta LLC (2018–2020)</li>
+      </ul>
+    </div>
+
+    <div class="resume-section" box-="round contain:!top">
+      <h2>Skills</h2>
+      <ul marker-="tree">
+        <li>JavaScript / TypeScript</li>
+        <li>Angular / React</li>
+        <li>Node.js / Express</li>
+      </ul>
+    </div>
+
+    <div class="resume-section" box-="double contain:none">
+      <h2>Education</h2>
+      <p>B.Sc. in Computer Science, University of Example (2014–2018)</p>
+    </div>
+
+    <div class="resume-section">
+      <button box-="round">Download Resume</button>
+    </div>
+  </body>
+</html>
