@@ -1,2 +1,2 @@
-# staticsite
+# static site
 Static resume
