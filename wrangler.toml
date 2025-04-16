@@ -10,3 +10,6 @@ entry-point = "."
 
 [build]
 upload.format = "service-worker"
+
+[assets]
+directory = "./" # or "./dist" 
