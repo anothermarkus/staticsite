@@ -2,43 +2,100 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Resume</title>
-     <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@webtui/css/dist/full.css"
-  />
+    <title>Mark's Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@webtui/css/dist/full.css"
+    />
+    <style>
+      body {
+        margin: 2rem;
+        max-width: 900px;
+        font-family: system-ui, sans-serif;
+      }
+    </style>
   </head>
   <body>
-    <div box-="round contain:none">
-      <h1>John Doe</h1>
-      <p>Email: john@example.com | Website: johndoe.dev</p>
-    </div>
+    <column gap-="4">
 
-    <div class="resume-section" box-="square">
-      <h2>Experience</h2>
-      <ul marker-="bullet">
-        <li>Software Engineer at Acme Corp (2020–Present)</li>
-        <li>Frontend Developer at Beta LLC (2018–2020)</li>
-      </ul>
-    </div>
+      <!-- Header -->
+      <column gap-="1" box-="round contain:none" is-="typography-block">
+        <h1>John Doe</h1>
+        <row align-="between">
+          <span is-="badge" variant-="background0">johndoe@email.com</span>
+          <span is-="badge" variant-="background0">+1 (123) 456-7890</span>
+          <span is-="badge" variant-="background0">San Francisco, CA</span>
+        </row>
+      </column>
 
-    <div class="resume-section" box-="round contain:!top">
-      <h2>Skills</h2>
-      <ul marker-="tree">
-        <li>JavaScript / TypeScript</li>
-        <li>Angular / React</li>
-        <li>Node.js / Express</li>
-      </ul>
-    </div>
+      <!-- Work Experience -->
+      <column self-="grow !basis" box-="square contain:!top">
+        <column><span is-="badge" variant-="background0">Work Experience</span></column>
+        <column gap-="1" space-="px:1">
 
-    <div class="resume-section" box-="double contain:none">
-      <h2>Education</h2>
-      <p>B.Sc. in Computer Science, University of Example (2014–2018)</p>
-    </div>
+          <column gap-="1" is-="typography-block" box-="round contain:none">
+            <row align-="between">
+              <span is-="badge" variant-="background0"><strong>Software Engineer</strong></span>
+              <span is-="badge" variant-="background0">Acme Corp</span>
+            </row>
+            <p space-="px:1">Built scalable web applications with Angular and .NET, serving millions of users.</p>
+            <row align-="between">
+              <span is-="badge" variant-="green" cap-="square">Full-Time</span>
+              <span is-="badge" variant-="background0">Jan 2021 – Present</span>
+            </row>
+          </column>
 
-    <div class="resume-section">
-      <button box-="round">Download Resume</button>
-    </div>
+          <column gap-="1" is-="typography-block" box-="round contain:none">
+            <row align-="between">
+              <span is-="badge" variant-="background0"><strong>Frontend Developer</strong></span>
+              <span is-="badge" variant-="background0">Beta Inc.</span>
+            </row>
+            <p space-="px:1">Redesigned legacy UI with modern CSS techniques and improved accessibility.</p>
+            <row align-="between">
+              <span is-="badge" variant-="yellow" cap-="round">Contract</span>
+              <span is-="badge" variant-="background0">Jun 2019 – Dec 2020</span>
+            </row>
+          </column>
+
+        </column>
+      </column>
+
+      <!-- Education -->
+      <column self-="grow !basis" box-="square contain:!top">
+        <column><span is-="badge" variant-="background0">Education</span></column>
+        <column gap-="1" space-="px:1">
+
+          <column gap-="1" is-="typography-block" box-="round contain:none">
+            <row align-="between">
+              <span is-="badge" variant-="background0"><strong>B.S. Computer Science</strong></span>
+              <span is-="badge" variant-="background0">University of Nowhere</span>
+            </row>
+            <p space-="px:1">Focused on software engineering, algorithms, and web development.</p>
+            <row align-="between">
+              <span is-="badge" variant-="blue" cap-="ribbon">GPA: 3.8</span>
+              <span is-="badge" variant-="background0">2015 – 2019</span>
+            </row>
+          </column>
+
+        </column>
+      </column>
+
+      <!-- Skills -->
+      <column self-="grow !basis" box-="square contain:!top">
+        <column><span is-="badge" variant-="background0">Skills</span></column>
+        <row wrap-="true" gap-="2">
+          <span is-="badge" variant-="foreground1" cap-="round">JavaScript</span>
+          <span is-="badge" variant-="foreground1" cap-="round">TypeScript</span>
+          <span is-="badge" variant-="foreground1" cap-="round">C# / .NET</span>
+          <span is-="badge" variant-="foreground1" cap-="round">Angular</span>
+          <span is-="badge" variant-="foreground1" cap-="round">React</span>
+          <span is-="badge" variant-="foreground1" cap-="round">SQL</span>
+          <span is-="badge" variant-="foreground1" cap-="round">Git</span>
+          <span is-="badge" variant-="foreground1" cap-="round">Cloudflare</span>
+        </row>
+      </column>
+
+    </column>
   </body>
 </html>
