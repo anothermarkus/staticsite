@@ -1,0 +1,18 @@
+@layer base, utils, components;
+
+/* Base styles */
+@import "@webtui/css/base.css";
+
+/* Utilities */
+@import "@webtui/css/utils/box.css";
+
+/* Components */
+@import "@webtui/css/components/button.css";
+@import "@webtui/css/components/typography.css";
+
+/* Optionally add your own styles */
+@layer components {
+  body {
+    background-color: white;
+  }
+}
