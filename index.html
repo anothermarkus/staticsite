@@ -17,85 +17,89 @@
     </style>
   </head>
   <body>
-    <column gap-="4">
-
-      <!-- Header -->
-      <column gap-="1" box-="round contain:none" is-="typography-block">
-        <h1>John Doe</h1>
-        <row align-="between">
-          <span is-="badge" variant-="background0">johndoe@email.com</span>
-          <span is-="badge" variant-="background0">+1 (123) 456-7890</span>
-          <span is-="badge" variant-="background0">San Francisco, CA</span>
-        </row>
-      </column>
-
-      <!-- Work Experience -->
-      <column self-="grow !basis" box-="square contain:!top">
-        <column><span is-="badge" variant-="background0">Work Experience</span></column>
-        <column gap-="1" space-="px:1">
-
-          <column gap-="1" is-="typography-block" box-="round contain:none">
-            <row align-="between">
-              <span is-="badge" variant-="background0"><strong>Software Engineer</strong></span>
-              <span is-="badge" variant-="background0">Acme Corp</span>
-            </row>
-            <p space-="px:1">Built scalable web applications with Angular and .NET, serving millions of users.</p>
-            <row align-="between">
-              <span is-="badge" variant-="green" cap-="square">Full-Time</span>
-              <span is-="badge" variant-="background0">Jan 2021 – Present</span>
-            </row>
+    <div id="contents">
+      <row gap-="1" self-="grow">
+        <column self-="grow !basis" box-="square contain:!top">
+          <column>
+            <span is-="badge" variant-="background0">Resume</span>
           </column>
+          <column gap-="1" space-="px:1">
 
-          <column gap-="1" is-="typography-block" box-="round contain:none">
-            <row align-="between">
-              <span is-="badge" variant-="background0"><strong>Frontend Developer</strong></span>
-              <span is-="badge" variant-="background0">Beta Inc.</span>
-            </row>
-            <p space-="px:1">Redesigned legacy UI with modern CSS techniques and improved accessibility.</p>
-            <row align-="between">
-              <span is-="badge" variant-="yellow" cap-="round">Contract</span>
-              <span is-="badge" variant-="background0">Jun 2019 – Dec 2020</span>
-            </row>
+            <!-- Contact Info -->
+            <column gap-="1" is-="typography-block" box-="round contain:none">
+              <row align-="between">
+                <span is-="badge" variant-="background0">
+                  <strong>Contact Info</strong>
+                </span>
+              </row>
+              <p space-="px:1">
+                📧 mark@example.com<br />
+                🌐 mark.dev<br />
+                📍 San Francisco, CA<br />
+                ☎️ (123) 456-7890
+              </p>
+              <row align-="between">
+                <span is-="badge" variant-="foreground2" cap-="square">Open to Opportunities</span>
+              </row>
+            </column>
+
+            <!-- Work Experience -->
+            <column gap-="1" is-="typography-block" box-="round contain:none">
+              <row align-="between">
+                <span is-="badge" variant-="background0">
+                  <strong>Work Experience</strong>
+                </span>
+              </row>
+              <p space-="px:1">
+                <strong>Senior Software Engineer</strong> @ TechCorp (2021–Present)<br />
+                - Led development of scalable cloud apps using Node.js & .NET<br />
+                - Introduced LLM-based tools that reduced code review time by 50%
+              </p>
+              <p space-="px:1">
+                <strong>Software Developer</strong> @ DevWorks (2018–2021)<br />
+                - Built Angular frontends and .NET APIs for healthcare systems<br />
+                - Reduced page load time by 30% via performance optimization
+              </p>
+              <row align-="between">
+                <span is-="badge" variant-="green" cap-="ribbon">Engineering</span>
+              </row>
+            </column>
+
+            <!-- Skills -->
+            <column gap-="1" is-="typography-block" box-="round contain:none">
+              <row align-="between">
+                <span is-="badge" variant-="background0">
+                  <strong>Skills</strong>
+                </span>
+              </row>
+              <p space-="px:1">
+                - Languages: C#, TypeScript, JavaScript<br />
+                - Frameworks: .NET, Angular, Node.js<br />
+                - Tools: Git, Docker, Azure, GitHub Actions, Wrangler
+              </p>
+              <row align-="between">
+                <span is-="badge" variant-="yellow" cap-="round">DevOps & Full Stack</span>
+              </row>
+            </column>
+
+            <!-- Education -->
+            <column gap-="1" is-="typography-block" box-="round contain:none">
+              <row align-="between">
+                <span is-="badge" variant-="background0">
+                  <strong>Education</strong>
+                </span>
+              </row>
+              <p space-="px:1">
+                <strong>B.S. Computer Science</strong> – University of Example (2014–2018)
+              </p>
+              <row align-="between">
+                <span is-="badge" variant-="red" cap-="triangle">Graduated with Honors</span>
+              </row>
+            </column>
+
           </column>
-
         </column>
-      </column>
-
-      <!-- Education -->
-      <column self-="grow !basis" box-="square contain:!top">
-        <column><span is-="badge" variant-="background0">Education</span></column>
-        <column gap-="1" space-="px:1">
-
-          <column gap-="1" is-="typography-block" box-="round contain:none">
-            <row align-="between">
-              <span is-="badge" variant-="background0"><strong>B.S. Computer Science</strong></span>
-              <span is-="badge" variant-="background0">University of Nowhere</span>
-            </row>
-            <p space-="px:1">Focused on software engineering, algorithms, and web development.</p>
-            <row align-="between">
-              <span is-="badge" variant-="blue" cap-="ribbon">GPA: 3.8</span>
-              <span is-="badge" variant-="background0">2015 – 2019</span>
-            </row>
-          </column>
-
-        </column>
-      </column>
-
-      <!-- Skills -->
-      <column self-="grow !basis" box-="square contain:!top">
-        <column><span is-="badge" variant-="background0">Skills</span></column>
-        <row wrap-="true" gap-="2">
-          <span is-="badge" variant-="foreground1" cap-="round">JavaScript</span>
-          <span is-="badge" variant-="foreground1" cap-="round">TypeScript</span>
-          <span is-="badge" variant-="foreground1" cap-="round">C# / .NET</span>
-          <span is-="badge" variant-="foreground1" cap-="round">Angular</span>
-          <span is-="badge" variant-="foreground1" cap-="round">React</span>
-          <span is-="badge" variant-="foreground1" cap-="round">SQL</span>
-          <span is-="badge" variant-="foreground1" cap-="round">Git</span>
-          <span is-="badge" variant-="foreground1" cap-="round">Cloudflare</span>
-        </row>
-      </column>
-
-    </column>
+      </row>
+    </div>
   </body>
 </html>
