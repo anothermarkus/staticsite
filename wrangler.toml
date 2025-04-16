@@ -2,5 +2,5 @@ name = "staticsite"
 compatibility_date = "2025-04-16"
 workers_dev = true
 
-[site]
-bucket = "./dist"
+[assets]
+directory = "dist"
