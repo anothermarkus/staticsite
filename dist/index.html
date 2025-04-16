@@ -35,12 +35,24 @@
       />
     
     <style>
+     html, body {
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, sans-serif;
+      }
+
       body {
+        display: flex;
+        align-items: flex-start;  /* prevents vertical centering */
+        min-height: 100vh;        /* ensures it takes full height for layout */
+      }
+
+      #contents {
         margin: 2rem;
         max-width: 900px;
-        font-family: system-ui, sans-serif;
-        overflow-y: hidden; /* disables vertical scroll bar */
+        width: 100%;
       }
+
 
       @layer base,utils,components;@layer base,utils,components;@layer base {
     :root {
@@ -1091,35 +1103,73 @@ nav[data-astro-cid-5blmo7yk] {
                   <strong>Work Experience</strong>
                 </span>
               </row>
+
               <p space-="px:1">
-                <strong>Senior Software Engineer</strong> @ TechCorp (2021–Present)<br />
-                - Led development of scalable cloud apps using Node.js & .NET<br />
-                - Introduced LLM-based tools that reduced code review time by 50%
+                <strong>Senior Principal Software Engineer</strong> @ Dell (Mar 2013 – Present)<br />
+                - Led full-stack development of a high-scale internal e-commerce platform<br />
+                - Introduced micro frontend architecture (SingleSPA, Angular 2–14)<br />
+                - Integrated OpenAI LLMs to enhance corporate tools and workflows<br />
+                - Architected microservices with .NET Core, C#, MongoDB, RabbitMQ, Kubernetes<br />
+                - Automated DevOps with GitLab, GitHub Actions, Octopus, and TeamCity<br />
+                - Integrated secure auth via OAuth2, SAML, Ping Federate, and HashiCorp Vault
               </p>
+
               <p space-="px:1">
-                <strong>Software Developer</strong> @ DevWorks (2018–2021)<br />
-                - Built Angular frontends and .NET APIs for healthcare systems<br />
-                - Reduced page load time by 30% via performance optimization
+                <strong>Principal Software Engineer</strong> @ Dell (Dec 2011 – Mar 2013)<br />
+                - Designed and launched Dell’s first Public Cloud platform<br />
+                - Delivered full-stack cloud solutions using Java, C#, Puppet, and Hadoop<br />
+                - Integrated SalesForce APIs and VMware virtualization for hybrid cloud deployments
               </p>
+
+              <p space-="px:1">
+                <strong>Team Manager / Architect</strong> @ Contigo Systems (2005 – 2011)<br />
+                - Architected scalable SaaS platforms in Java and Spring<br />
+                - Led cross-functional teams through Agile and DevOps transformations<br />
+                - Built location-based systems for mobile and web (iPhone, BlackBerry, J2ME)<br />
+                - Recognized by Red Herring and Profit 100 for rapid company growth
+              </p>
+
+              <p space-="px:1">
+                <strong>Software Developer</strong> @ Mainland Glory Software (2004 – 2005)<br />
+                - Optimized multiplayer poker platform in Java and C++ with Oracle 9i<br />
+                - Integrated payment gateways and enhanced server efficiency with custom profiling
+              </p>
+
               <row align-="between">
-                <span is-="badge" variant-="green" cap-="ribbon">Engineering</span>
+                <span is-="badge" variant-="green" cap-="ribbon">Full Stack + Platform Engineering</span>
               </row>
             </column>
 
-            <!-- Skills -->
+            <!-- Achievements -->
             <column gap-="1" is-="typography-block" box-="round contain:none">
               <row align-="between">
                 <span is-="badge" variant-="background0">
-                  <strong>Skills</strong>
+                  <strong>Achievements</strong>
                 </span>
               </row>
               <p space-="px:1">
-                - Languages: C#, TypeScript, JavaScript<br />
-                - Frameworks: .NET, Angular, Node.js<br />
-                - Tools: Git, Docker, Azure, GitHub Actions, Wrangler
+                🏆 2024 AI/ML Hackathon Winner — Created a POC combining ML.NET, data scrubbing, and LLMs for a revolutionary interactive e-commerce experience.
               </p>
               <row align-="between">
-                <span is-="badge" variant-="yellow" cap-="round">DevOps & Full Stack</span>
+                <span is-="badge" variant-="blue" cap-="diamond">AI + Innovation</span>
+              </row>
+            </column>
+
+            <!-- Certifications -->
+            <column gap-="1" is-="typography-block" box-="round contain:none">
+              <row align-="between">
+                <span is-="badge" variant-="background0">
+                  <strong>Certifications</strong>
+                </span>
+              </row>
+              <p space-="px:1">
+                - Angular Certification (Simplilearn, 2024)<br />
+                - AI Fundamentals (Wharton Online, 2025)<br />
+                - DevOps Master's Program (Caltech, 2020–2021)<br />
+                - PMP, Scrum Master (SCM), ITIL v3<br />
+              </p>
+              <row align-="between">
+                <span is-="badge" variant-="yellow" cap-="triangle">Certified & Up-to-Date</span>
               </row>
             </column>
 
@@ -1131,12 +1181,52 @@ nav[data-astro-cid-5blmo7yk] {
                 </span>
               </row>
               <p space-="px:1">
-                <strong>B.S. Computer Science</strong> – University of Example (2014–2018)
+                <strong>B.Sc. Computer Science</strong> – University of British Columbia (1999–2004)<br />
+                Golden Key Honoree, ACM, IEEE, CS Society
+              </p>
+              <p space-="px:1">
+                - Wireless & Mobile Dev (BCIT, 2006)<br />
+                - iPhone Development (BCIT, 2011) – Built Socius, a multiplayer action game demo
               </p>
               <row align-="between">
-                <span is-="badge" variant-="red" cap-="triangle">Graduated with Honors</span>
+                <span is-="badge" variant-="red" cap-="triangle">Academic Distinction</span>
               </row>
             </column>
+
+            <!-- Skills -->
+            <column gap-="1" is-="typography-block" box-="round contain:none">
+              <row align-="between">
+                <span is-="badge" variant-="background0">
+                  <strong>Skills</strong>
+                </span>
+              </row>
+
+              <p space-="px:1">
+                <strong>Frontend</strong>: Angular (2–14), AngularJS, NgRX, Single-SPA, RxJS, JavaScript, TypeScript, SCSS, Bootstrap, Material Design, Cypress, Saucelabs
+              </p>
+
+              <p space-="px:1">
+                <strong>Backend</strong>: .NET Core, Web API, C#, Entity Framework, Dapper, Automapper, Node.js, REST, RabbitMQ, MongoDB, SQL Server, WCF, OAuth2, SAML
+              </p>
+
+              <p space-="px:1">
+                <strong>DevOps & Cloud</strong>: Kubernetes, Docker, GitHub Actions, GitLab CI/CD, Octopus, TeamCity, Jenkins, PCF (Pivotal Cloud Foundry), Puppet, HashiCorp Vault
+              </p>
+
+              <p space-="px:1">
+                <strong>AI & ML</strong>: OpenAI API (LLMs, Embeddings), ML.NET, Prompt Engineering, AI-Augmented Applications
+              </p>
+
+              <p space-="px:1">
+                <strong>Tools & Practices</strong>: Git, Visual Studio, VS Code, Postman, Fiddler, SoapUI, Agile, Scrum, Kanban, TDD, BDD, Design Patterns, Clean Architecture
+              </p>
+
+              <row align-="between">
+                <span is-="badge" variant-="indigo" cap-="star">Full Stack · DevOps · AI Integration</span>
+              </row>
+            </column>
+
+
 
           </column>
         </column>
