@@ -1,15 +1,6 @@
 name = "resume-site"
-type = "webpack" # or "javascript", it's ignored when using `site`
-
-workers_dev = true
 compatibility_date = "2025-04-16"
-
-[site]
-bucket = "./" # This should point to where I have index.html
-entry-point = "."
-
-[build]
-upload.format = "service-worker"
+workers_dev = true
 
 [assets]
-directory = "./" # or "./dist" 
+directory = "." # or "dist"
