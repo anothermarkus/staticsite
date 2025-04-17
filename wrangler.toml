@@ -2,5 +2,8 @@ name = "staticsite"
 compatibility_date = "2025-04-16"
 workers_dev = true
 
-[assets]
-directory = "dist"
+[build]
+command = "npm run build"
+cwd = "."              # root of your project
+upload.format = "directory"
+upload.dir = "dist"
