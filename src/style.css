@@ -1119,5 +1119,9 @@ nav[data-astro-cid-5blmo7yk] {
       --foreground2: #999;
     }
 
+    column, row {  
+        width: 100%;
+      }
+
 
   }
