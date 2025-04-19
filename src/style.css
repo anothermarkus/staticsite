@@ -1044,3 +1044,54 @@ nav[data-astro-cid-5blmo7yk] {
     }
 }
 
+
+#themelist {
+    [aria-selected="true"] {
+      background-color: var(--background2);
+    }
+  }
+  #tab-contents [data-tab] {
+    display: none;
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  body,
+  html {
+    background-color: var(--background0);
+    color: var(--foreground0);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height, 1.5);
+    font-variant-ligatures: common-ligatures;
+  }
+
+
+  @layer base {
+    html[data-webtui-theme="light"] {
+      --background0: #fff;
+      --background1: #ddd;
+      --background2: #bbb;
+      --background3: #999;
+
+      --foreground0: #000;
+      --foreground1: #444;
+      --foreground2: #888;
+    }
+
+    html[data-webtui-theme="dark"] {
+      --background0: #000;
+      --background1: #222;
+      --background2: #444;
+      --background3: #666;
+
+      --foreground0: #fff;
+      --foreground1: #ccc;
+      --foreground2: #999;
+    }
+
+
+  }
