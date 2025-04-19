@@ -36,6 +36,32 @@
         width:100%;
       }
 
+      @media (max-width: 600px) {
+        body {
+          flex-direction: column;        /* stack contents vertically */
+          padding: 1rem;                 /* add some padding around edges */
+        }
+      
+        #contents {
+          margin: 1rem 0;
+          padding: 0 1rem;
+          width: 100%;
+          max-width: 100%;               /* remove max-width restriction */
+          box-sizing: border-box;
+        }
+      
+        h1, h2, h3 {
+          font-size: 1.25rem;            /* scale down headers slightly */
+        }
+      
+        p, li {
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+      }
+
+
+
 
       @layer base,utils,components;@layer base,utils,components;@layer base {
     :root {
