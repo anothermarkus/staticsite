@@ -18,5 +18,8 @@
     "@webtui/theme-catppuccin": "^0.0.2",
     "@webtui/theme-nord": "^0.0.2",
     "vite": "^6.3.0"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.14.0"
   }
 }
