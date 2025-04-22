@@ -4,3 +4,7 @@ workers_dev = true
 
 [assets]
 directory = "./dist"
+
+routes = [
+  { pattern = "anothermarcus.org/*", script = "worker" }
+]
