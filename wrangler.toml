@@ -2,10 +2,12 @@ name = "staticsite"
 compatibility_date = "2025-04-16"
 workers_dev = true
 type = "javascript"
+main = "worker.js"
+
+
+[assets]
+directory = "./dist"
+
 
 [site]
 bucket = "./dist"
-entry-point = "."  # assuming worker.js is in project root
-
-[build]
-command = "vite build"
