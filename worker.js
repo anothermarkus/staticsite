@@ -28,26 +28,8 @@ export default {
         headers,
       })
     } catch (e) {
-      if (
-        request.method === 'GET' &&
-        request.headers.get('accept')?.includes('text/html')
-      ) {
-        // fallback to index.html (SPA)
-        const response = await getAssetFromKV(
-          {
-            request: new Request(`${new URL(request.url).origin}/index.html`, request),
-            waitUntil: ctx.waitUntil.bind(ctx),
-          },
-          {
-            ASSET_NAMESPACE: env.__STATIC_CONTENT,
-            ASSET_MANIFEST: env.__STATIC_CONTENT_MANIFEST,
-          }
-        )
-
-        return response
-      }
-
-      return new Response("Not Found", { status: 404 })
+      console.error('Worker error:', e.stack || e)
+      return new Response("Internal Error", { status: 500 })
     }
   },
 }
