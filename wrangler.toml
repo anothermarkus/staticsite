@@ -7,7 +7,7 @@ main = "worker.js"
 
 [site]
 bucket = "./dist"
-entry-point = "worker.js"  # Your Worker script entry point
+entry-point = "worker.js"  
 
 [build]
 command = "vite build" 
