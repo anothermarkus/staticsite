@@ -1,34 +1,53 @@
-async function handleRequest(request) {
-    const url = new URL(request.url);
-    const path = url.pathname.substring(1) || "index.html"; // Default to index.html
-  
-    // If the file is not found, return a 404 error
-    const filePath = `./dist/${path}`;
-  
+import { getAssetFromKV } from '@cloudflare/kv-asset-handler'
+
+export default {
+  async fetch(request, env, ctx) {
     try {
-      const file = await fetch(filePath);  // Fetch the file from the dist directory
-      if (!file.ok) {
-        return new Response("Not Found", { status: 404 });
+      const response = await getAssetFromKV(
+        {
+          request,
+          waitUntil: ctx.waitUntil.bind(ctx),
+        },
+        {
+          ASSET_NAMESPACE: env.__STATIC_CONTENT,
+          ASSET_MANIFEST: env.__STATIC_CONTENT_MANIFEST,
+        }
+      )
+
+      const headers = new Headers(response.headers)
+      headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains")
+      headers.set("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self'")
+      headers.set("X-Frame-Options", "SAMEORIGIN")
+      headers.set("X-Content-Type-Options", "nosniff")
+      headers.set("Referrer-Policy", "strict-origin-when-cross-origin")
+      headers.set("Permissions-Policy", "geolocation=(), microphone=(), camera=()")
+
+      return new Response(response.body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers,
+      })
+    } catch (e) {
+      if (
+        request.method === 'GET' &&
+        request.headers.get('accept')?.includes('text/html')
+      ) {
+        // fallback to index.html (SPA)
+        const response = await getAssetFromKV(
+          {
+            request: new Request(`${new URL(request.url).origin}/index.html`, request),
+            waitUntil: ctx.waitUntil.bind(ctx),
+          },
+          {
+            ASSET_NAMESPACE: env.__STATIC_CONTENT,
+            ASSET_MANIFEST: env.__STATIC_CONTENT_MANIFEST,
+          }
+        )
+
+        return response
       }
-  
-      // Fetch the file's content and headers
-      const response = await file.text();
-  
-      const headers = new Headers(file.headers);
-      headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
-      headers.set("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self'");
-      headers.set("X-Frame-Options", "SAMEORIGIN");
-      headers.set("X-Content-Type-Options", "nosniff");
-      headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
-      headers.set("Permissions-Policy", "geolocation=(), microphone=(), camera=()");
-  
-      return new Response(response, { status: 200, headers });
-    } catch (error) {
-      return new Response("Not Found", { status: 404 });
+
+      return new Response("Not Found", { status: 404 })
     }
-  }
-  
-  addEventListener("fetch", (event) => {
-    event.respondWith(handleRequest(event.request));
-  });
-  
+  },
+}
