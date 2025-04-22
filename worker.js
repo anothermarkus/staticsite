@@ -3,16 +3,7 @@ import { getAssetFromKV } from '@cloudflare/kv-asset-handler'
 export default {
   async fetch(request, env, ctx) {
     try {
-      const response = await getAssetFromKV(
-        {
-          request,
-          waitUntil: ctx.waitUntil.bind(ctx),
-        },
-        {
-          ASSET_NAMESPACE: env.__STATIC_CONTENT,
-          ASSET_MANIFEST: env.__STATIC_CONTENT_MANIFEST,
-        }
-      )
+      const response = await getAssetFromKV({ request, waitUntil: ctx.waitUntil })
 
       const headers = new Headers(response.headers)
       headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains")
